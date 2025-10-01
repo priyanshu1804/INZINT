@@ -6,7 +6,11 @@ const userRoutes=require("./routes/user");
 const taskRoutes=require("./routes/task");
 const app=express();
 const db=require('./db');
-app.use(cors());
+app.use(cors({
+  origin: "https://inzint.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 app.use("/user",userRoutes);
 app.use("/task",taskRoutes);
