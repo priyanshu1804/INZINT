@@ -9,8 +9,10 @@ const db=require('./db');
 const corsOptions = {
   origin: "https://inzint.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"], 
   credentials: true,
 };
+
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 app.use(express.json());
