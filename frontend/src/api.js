@@ -1,5 +1,5 @@
 import axios from "axios";
-const API=axios.create({baseURL:"https://inzint-stjp-ebon.vercel.app/"});
+const API=axios.create({baseURL:"https://inzint-1.onrender.com/"});
 API.interceptors.request.use((req)=>{
     const token=localStorage.getItem("token");
     if(token){
